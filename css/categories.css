@@ -1,0 +1,95 @@
+/* Segunda Seção */
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 1681px;
+  height: min-content;
+  margin: 0 auto;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.categories__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1569px;
+  height: 47px;
+}
+
+.categories__title {
+  width: 793px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  background: linear-gradient(90deg, #ffffff 0%, #a17850 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.categories__cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11.99px;
+  width: 1678px;
+  height: 299.64px;
+}
+
+.categories__card {
+  flex-shrink: 0;
+  background: #040404;
+  border-radius: 14.1511px 0 0 14.1511px;
+  background-image: url(../images/Imagem\ do\ Produto.png);
+  background-size: cover;
+}
+
+.categories__card:nth-child(1),
+.categories__card:nth-child(2),
+.categories__card:nth-child(3) {
+  width: 410.51px;
+  height: 299.64px;
+}
+
+.categories__card:nth-child(4) {
+  width: 412px;
+  height: 299px;
+}
+
+.categories__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 186.62px;
+  height: 85.41px;
+}
+
+.categories__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  width: 87.31px;
+  height: 85.41px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.categories__arrow--prev {
+  background: #080808;
+}
+
+.categories__arrow--next {
+  background: #0a0a0a;
+}
+
+.categories__arrow--next svg path {
+  fill: url(#arrow-gradient);
+}

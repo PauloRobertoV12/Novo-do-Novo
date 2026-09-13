@@ -1,0 +1,536 @@
+/* =========================================================
+   MENU EXPANSÍVEL
+========================================================= */
+
+.fixed-menu {
+    position: absolute;
+  
+    /*
+     * Como o menu está DENTRO do header,
+     * 100% significa exatamente o final do header.
+     */
+    top: 100%;
+  
+    left: 50%;
+  
+    /*
+     * Referência:
+     * 1580px de largura.
+     */
+    width: min(1580px, calc(100% - 40px));
+  
+    height: 100px;
+  
+    /*
+     * Centraliza em relação ao header.
+     */
+    transform:
+      translateX(-50%)
+      translateY(-12px);
+  
+    background: #060606;
+  
+    border-radius: 0 0 24px 24px;
+  
+    /*
+     * O menu precisa ficar acima
+     * do conteúdo da página.
+     */
+    z-index: 200;
+  
+  
+    /* ESTADO FECHADO */
+  
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 180ms ease,
+      transform 220ms ease,
+      visibility 0s linear 220ms;
+  }
+  
+  
+  /* =========================================================
+     MENU ABERTO
+  ========================================================= */
+  
+  .fixed-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+    transition: opacity 180ms ease, transform 220ms ease, visibility 0s;
+    background: #070707;
+  }
+  
+  
+  /* =========================================================
+     CONTEÚDO INTERNO
+  ========================================================= */
+  
+  .fixed-menu__inner {
+    width: 100%;
+    height: 100%;
+  
+    padding: 20px 107px;
+  
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    gap: 33px;
+  }
+  
+  
+  /* =========================================================
+     ITEM
+  ========================================================= */
+  
+  .fixed-menu__item {
+    width: 200px;
+    height: 60px;
+  
+    flex: 0 0 200px;
+  
+    padding: 10px;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 10px;
+  
+    color: #b0aba5;
+  
+    text-decoration: none;
+  
+    transition:
+      color 180ms ease,
+      opacity 180ms ease;
+  }
+  
+  
+  /* Texto */
+  
+  .fixed-menu__item > span:last-child {
+    width: 138px;
+  
+    font-family: "Mada", sans-serif;
+  
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+  
+    line-height: 40px;
+  
+    text-align: center;
+  
+    white-space: nowrap;
+  }
+  
+  
+  /* =========================================================
+     ÍCONE
+  ========================================================= */
+  
+  .fixed-menu__icon {
+    width: 32px;
+    height: 32px;
+  
+    flex: 0 0 32px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background: #060606;
+  
+    border: 1px solid #0a0a0a;
+    border-radius: 14px;
+  }
+  
+  
+  .fixed-menu__icon svg {
+    width: 14px;
+    height: 14px;
+  
+    fill: none;
+  
+    stroke: #b08a80;
+    stroke-width: 1.3;
+  
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  
+  /* =========================================================
+     HOVER
+  ========================================================= */
+  
+  .fixed-menu__item:hover {
+    color: #ffffff;
+  }
+  
+  
+  .fixed-menu__item:hover .fixed-menu__icon {
+    border-color: rgba(176, 138, 128, 0.45);
+  }
+  
+  
+  /* =========================================================
+     NOTEBOOK
+  ========================================================= */
+  
+  @media (max-width: 1700px) {
+  
+    .fixed-menu {
+      /*
+       * Mantém o menu alinhado proporcionalmente
+       * ao header em telas menores.
+       */
+      width: calc(100% - 100px);
+    }
+  
+  
+    .fixed-menu__inner {
+      padding-left: 40px;
+      padding-right: 40px;
+  
+      gap: clamp(8px, 1.7vw, 33px);
+    }
+  
+  
+    .fixed-menu__item {
+      min-width: 0;
+  
+      flex: 1 1 0;
+  
+      justify-content: center;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     TABLET
+  ========================================================= */
+  
+  @media (max-width: 1100px) {
+  
+    .fixed-menu {
+      width: calc(100% - 48px);
+  
+      height: auto;
+    }
+  
+  
+    .fixed-menu__inner {
+      padding: 20px 30px;
+  
+      display: grid;
+  
+      grid-template-columns: repeat(3, 1fr);
+  
+      gap: 10px 20px;
+    }
+  
+  
+    .fixed-menu__item {
+      width: 100%;
+      height: 50px;
+  
+      padding: 5px 10px;
+  
+      justify-content: flex-start;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+  
+  @media (max-width: 650px) {
+  
+    .fixed-menu {
+      width: calc(100% - 32px);
+      border-radius: 0 0 18px 18px;
+    }
+  
+    .fixed-menu__inner {
+      padding: 20px;
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+  
+    .fixed-menu__item {
+      height: 48px;
+    }
+  
+    .fixed-menu__item > span:last-child {
+      width: auto;
+      font-size: 17px;
+      text-align: left;
+    }
+  }
+  
+  .hero__header {
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .hero-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1680px;
+  }
+  
+  .hero__header-bars {
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    left: 0;
+    top: 25px;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .hero__header-bar {
+    position: absolute;
+    width: 101%; 
+    height: 36px;
+    border-radius: 0;
+  }
+  
+  .hero__header-bar--primary {
+    top: 35px;
+    background: radial-gradient(
+      ellipse 43.96% 1251.26% at 50% 50%,
+      #543c23 0%,
+      #5c4226 30%,
+      #140f08 100%
+    );
+  }
+  
+  .hero__header-bar--secondary {
+    top: 83px;
+    background: radial-gradient(
+      ellipse 43.96% 1251.26% at 50% 50%,
+      rgba(84, 60, 35, 0.5) 0%,
+      rgba(92, 66, 38, 0.5) 30%,
+      rgba(20, 15, 8, 0.5) 100%
+    );
+  }
+  
+  .hero__header-inner {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: 29px;
+    background: #050505;
+    border-radius: 24px;
+    max-width: 1680px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(176, 152, 128, 0.08),
+        rgba(176, 152, 128, 0.30),
+        rgba(176, 152, 128, 0.08),
+        transparent
+    ) 1;
+  }
+  
+  /* Botão Menu */
+  .hero__menu-btn {
+    position: absolute;
+    width: 91px;
+    height: 94px;
+    left: 30px;
+    top: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    gap: 12px;
+    background: #080808;
+    border: 1px solid #080808;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s all;
+  }
+  
+  .hero__menu-btn:hover {
+    background: hsl(0, 0%, 4%);
+    transform: scale(1.04);
+  }
+  
+  /* Logotipo */
+  .hero__logo {
+    position: absolute;
+    width: 175px;
+    height: 53px;
+    left: 185px;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lemonada', cursive;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 150%;
+    background: linear-gradient(90deg, #ffffff 0%, #a67c53 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Barra de busca */
+  .hero__search {
+    position: absolute;
+    width: 689px;
+    height: 94px;
+    left: 424px;
+    top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    gap: 12px;
+    background: #080808;
+    border-radius: 14px;
+    transition: 0.4s all;
+  }
+  
+  .hero__search:hover {
+    background: hsl(0 0% 4% / 1);
+  }
+  
+  .hero__search-placeholder {
+    width: 100%;
+    font-family: 'Mada', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 200%;
+    text-align: center;
+    color: #b0aba5;
+    background: transparent;
+    border: none;
+  }
+  
+  .hero__search-input {
+    color: #b0aba5;
+    font-size: 20px;
+    font-family: mada;
+    width: 100%;
+    background: transparent;
+    border: none;
+    transition: 0.2s all;
+  }
+  
+  .hero__search-input::-webkit-search-cancel-button {
+    display: none;
+  }
+  
+  .hero__search-input:focus {
+    font-size: 22px;
+    outline: none;
+    border: none;
+  }
+  
+  .hero__search-button {
+    background: transparent;
+    border: none;
+  }
+  
+  .hero__search-icon {
+    flex-shrink: 0;
+  }
+  
+  /* Botão Perfil */
+  .hero__profile-btn {
+    position: absolute;
+    width: 91px;
+    height: 94px;
+    left: 1149px;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #080808;
+    border: 1px solid #080808;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s all;
+  }
+  
+  .hero__profile-btn:hover {
+    background: hsl(0, 0%, 4%);
+    transform: scale(1.04);
+  }
+  
+  /* Carrinho */
+  .hero__cart {
+    position: absolute;
+    width: 375px;
+    height: 98px;
+    left: 1275px;
+    top: 28px;
+    background: #090909;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    transition: 0.2s all;
+  }
+  
+  .hero__cart:hover {
+    transform: scale(1.02);
+    background: hsl(0 0% 5% / 1);
+  }
+  
+  .hero__cart-icon-wrap {
+    position: relative;
+    width: 96.77px;
+    height: 97.78px;
+    background: #070707;
+    border-radius: 14px 0 0 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .hero__cart-count {
+    position: absolute;
+    top: 2px;
+    right: 12px;
+    font-family: 'Lemonada', cursive;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    color: #ffffff;
+  }
+  
+  .hero__cart-text {
+    margin-left: 38px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 200%;
+    color: #b0aba5;
+    white-space: nowrap;
+  }
+  
+  .text-hero {
+    padding-bottom: 10px;
+  }

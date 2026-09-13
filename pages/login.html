@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faça seu Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=Lemonada:wght@300;400&family=Mada:wght@400;500;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="../css/hero.css">
+<link rel="stylesheet" href="../css/rodape.css">
+<link rel="stylesheet" href="../css/carrinho.css">
+<link rel="stylesheet" href="../css/products.css">
+<link rel="stylesheet" href="../css/categories.css">
+<link rel="stylesheet" href="../css/colecao.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/produto.css">
+<link rel="stylesheet" href="../css/components.css/arrows.css">
+<link rel="stylesheet" href="../css/components.css/products.css">
+<link rel="stylesheet" href="../css/components.css/rodape.css">
+</head>
+
+<body>
+  <main class="login">
+    <div class="login__container">
+      <!-- =========================
+           LADO ESQUERDO
+      ========================== -->
+      <section class="login__left">
+        <!-- Logotipo -->
+        <a href="http://127.0.0.1:5500/index.html" class="login__logo">
+          Logotipo
+        </a>
+
+        <!-- Formulário -->
+        <form class="login__form">
+          <!-- Nome -->
+          <div class="login__field">
+            <label for="name">
+              Seu Nome:
+            </label>
+
+            <div class="login__input-wrapper">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Luana"
+                autocomplete="name">
+
+              <i class="fa-solid fa-eye login__input-icon"></i>
+
+            </div>
+
+          </div>
+
+
+          <!-- E-mail -->
+          <div class="login__field">
+
+            <label for="email">
+              Seu E-mail:
+            </label>
+
+            <div class="login__input-wrapper">
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Luanah@gmail.com"
+                autocomplete="email"
+              >
+
+              <i class="fa-solid fa-eye login__input-icon"></i>
+
+            </div>
+
+          </div>
+
+
+          <!-- Senha -->
+          <div class="login__field">
+
+            <label for="password">
+              Sua Senha:
+            </label>
+
+            <div class="login__input-wrapper">
+
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Lh1234."
+                autocomplete="current-password"
+              >
+
+              <button
+                class="login__password-toggle"
+                type="button"
+                aria-label="Mostrar senha"
+              >
+                <i class="fa-solid fa-eye-slash"></i>
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- Área dos botões -->
+          <div class="login__actions">
+
+            <!-- Comprar -->
+
+              <div>
+                <a href="http://127.0.0.1:5500/index.html" class="hero__cta">
+                <div class="hero__cta-icon-login">
+                    <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Botão Pequeno">
+                </div>
+                <div class="hero__cta-text-login">
+                    <span class="button-text">Confirmar meu Login!</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- Login social -->
+            <div class="login__social-login">
+
+              <button type="button" class="login__social-button">
+                <img src="../assets/images/Gmail.png" alt="Gmail">
+                <span>Entrar com Gmail</span>
+              </button>
+
+              <button type="button" class="login__social-button">
+                <img src="../assets/images/Facebook.svg" alt="Facebook">
+                <span>Entrar com Facebook</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+
+        <!-- Rodapé -->
+        <footer class="login__footer">
+
+          <p>
+            Marca 2026 - Direitos Autorais
+          </p>
+
+          <div class="login__footer-social">
+
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+
+          </div>
+
+        </footer>
+
+      </section>
+
+
+      <!-- =========================
+           LADO DIREITO
+      ========================== -->
+
+      <section class="login__visual">
+
+        <img
+          src="../assets/images/c1f4b630-694e-4600-b517-c3cd2774f417.png"
+          class="login__visual-image"
+          alt=""
+        >
+
+        <div class="login__visual-overlay"></div>
+
+
+        <!-- Ícone central inferior -->
+        <button
+          class="login__visual-action"
+          type="button"
+          aria-label="Ação da imagem"
+        >
+          <i class="fa-regular fa-image"></i>
+        </button>
+
+
+        <!-- Paginação -->
+        <div class="login__pagination">
+
+          <button
+            type="button"
+            class="login__dot login__dot--active"
+            aria-label="Imagem 1"
+          ></button>
+
+          <button
+            type="button"
+            class="login__dot"
+            aria-label="Imagem 2"
+          ></button>
+
+          <button
+            type="button"
+            class="login__dot"
+            aria-label="Imagem 3"
+          ></button>
+
+          <button
+            type="button"
+            class="login__dot"
+            aria-label="Imagem 4"
+          ></button>
+
+          <button
+            type="button"
+            class="login__dot"
+            aria-label="Imagem 5"
+          ></button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

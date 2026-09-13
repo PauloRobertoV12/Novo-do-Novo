@@ -1,0 +1,37 @@
+.secao-erro {
+    padding-top: 280px;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+}
+
+.conteudo-interno {
+    margin: 0 auto;
+    width: fit-content;
+    display: grid;
+    gap: 20px;
+}
+
+.titulo-pagina {
+    font-size: 45px;
+    margin: 0 auto;
+}
+
+.seach-page {
+    display: flex;
+    padding: 30px;
+    border-radius: 14px;
+    background: #080808;
+    width: 750px;
+    height: 100px;
+}
+
+.texto-pagina {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.background-section {
+    background-image: url(../assets/images/Imagem\ dos\ Produtos.png);
+    background-size: cover;
+}

@@ -1,0 +1,431 @@
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #000;
+    padding-top: 120px;
+    /*
+     * Cria um contexto próprio de camadas.
+     * As barras ficam atrás do container preto.
+     */
+    isolation: isolate;
+  }
+  
+  /* =========================================================
+     BARRAS DECORATIVAS ATRÁS DO FOOTER
+  ========================================================= */
+  
+  .footer__bars {
+    position: absolute;
+    width: 100%;
+    height: 179px;
+    left: 0;
+    top: 400px;
+    pointer-events: none;
+    /* Atrás do conteúdo do footer */
+    z-index: 0;
+  }
+  
+  .footer__bar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    border-radius: 0;
+  }
+  
+  /* Primeira barra */
+  
+  .footer__bar--primary {
+    top: 0;
+    background: radial-gradient(ellipse 43.96% 1251.26% at 50% 50%,#543c23 0%,#5c4226 30%,#140f08 100%);
+  }
+
+  /* Segunda barra */
+
+  .footer__bar--secondary {
+    top: 48px;
+    background: radial-gradient(ellipse 43.96% 1251.26% at 50% 50%,rgba(84, 60, 35, 0.5) 0%,rgba(92, 66, 38, 0.5) 30%,rgba(20, 15, 8, 0.5) 100%);
+  }
+  
+  /* =========================================================
+     CONTAINER PRINCIPAL
+  ========================================================= */
+  
+  .footer__container {
+    position: relative;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    background: #030303;
+    background-image: url(../assets/images/Teste\ de\ Background\ Carrinho.png);
+    background-size: cover;
+    border-radius: 26px 26px 0 0;
+    overflow: hidden;
+    /* Fica na frente das barras */
+    z-index: 1;
+  }
+  
+  /* =========================================================
+     ESPAÇO SUPERIOR
+  ========================================================= */
+  
+  .footer__spacer {
+    height: 205px;
+  }
+  
+  
+  /* =========================================================
+     ÁREA DE CONTATO
+  ========================================================= */
+  
+  .footer__contact {
+    min-height: 118px;
+    padding: 17px 73px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #040404;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, transparent, rgba(176, 152, 128, 0.08), rgba(176, 152, 128, 0.30), rgba(176, 152, 128, 0.08), transparent) 1;
+  }
+  
+  
+  /* Blocos de contato */
+  
+  .footer__contact-item {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 10px;
+  }
+  
+  
+  /* Contato da direita */
+  
+  .footer__contact-item--right {
+    align-items: flex-end;
+  
+    text-align: right;
+  }
+  
+  
+  /* Texto pequeno */
+  
+  .footer__label {
+    color: #b0aba5;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  
+  
+  /* =========================================================
+     TELEFONE E E-MAIL
+  ========================================================= */
+  
+  .footer__phone,
+  .footer__email {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    font-family: 'Lemonada', cursive;
+  }
+  
+  
+  /* Telefone */
+  
+  .footer__phone {
+    background: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #ffffff 36%,
+      #ae8b6b 72%,
+      #c2a27f 100%
+    );
+  
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  
+  /* E-mail */
+  
+  .footer__email {
+    background: linear-gradient(
+      90deg,
+      #f4f0ec 0%,
+      #f4f0ec 50%,
+      #b8997b 100%
+    );
+  
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  
+  /* Hover */
+  
+  .footer__phone:hover,
+  .footer__email:hover {
+    opacity: 0.8;
+  }
+  
+  
+  /* =========================================================
+     PARTE INFERIOR
+  ========================================================= */
+  
+.footer__bottom {
+  min-height: 140px;
+  padding: 0 73px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+  
+/* =========================================================
+LOGO
+========================================================= */
+  
+.footer__logo {
+  justify-self: start;
+  color: #f3efeb;
+  font-family: 'Lemonada', cursive;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+  
+/* =========================================================
+COPYRIGHT
+========================================================= */
+  
+.footer__copyright {
+  justify-self: center;
+  color: #9e9996;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+  
+/* =========================================================
+ REDES SOCIAIS
+========================================================= */
+  
+.footer__social {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+  
+  .footer__social a {
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    color: #b79879;
+  
+    text-decoration: none;
+  
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+  
+  
+  .footer__social a:hover {
+    transform: translateY(-2px);
+  
+    opacity: 0.75;
+  }
+  
+  
+  /* SVG padrão */
+  
+  .footer__social svg {
+    width: 100%;
+    height: 100%;
+  
+    fill: none;
+  
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+  
+  
+  /* Parte preenchida do Instagram */
+  
+  .footer__social svg .fill {
+    fill: currentColor;
+  
+    stroke: none;
+  }
+  
+  
+  /* Facebook */
+  
+  .icon-facebook {
+    width: 32px;
+    height: 32px;
+  }
+  
+  
+  /* =========================================================
+     TABLET
+  ========================================================= */
+  
+  @media (max-width: 900px) {
+  
+    .footer {
+      padding: 0 24px;
+    }
+  
+  
+    /* Reposiciona as barras */
+  
+    .footer__bars {
+      top: 180px;
+    }
+  
+  
+    /* Espaço superior */
+  
+    .footer__spacer {
+      height: 140px;
+    }
+  
+  
+    /* Contato */
+  
+    .footer__contact {
+      padding: 28px 40px;
+    }
+  
+  
+    .footer__phone,
+    .footer__email {
+      font-size: 27px;
+    }
+  
+  
+    /* Parte inferior */
+  
+    .footer__bottom {
+      padding: 0 40px;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+  
+  @media (max-width: 650px) {
+  
+    .footer {
+      padding: 0 16px;
+    }
+  
+  
+    /* Container */
+  
+    .footer__container {
+      border-radius: 18px 18px 0 0;
+    }
+  
+  
+    /* Barras */
+  
+    .footer__bars {
+      top: 120px;
+    }
+  
+  
+    .footer__bar {
+      height: 28px;
+    }
+  
+  
+    .footer__bar--secondary {
+      top: 40px;
+    }
+  
+  
+    /* Espaço superior */
+  
+    .footer__spacer {
+      height: 90px;
+    }
+  
+  
+    /* Contato */
+  
+    .footer__contact {
+      padding: 28px 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+  
+  
+    .footer__contact-item--right {
+      align-items: flex-start;
+  
+      text-align: left;
+    }
+  
+  
+    .footer__label {
+      font-size: 15px;
+    }
+  
+  
+    .footer__phone,
+    .footer__email {
+      font-size: clamp(23px, 7vw, 30px);
+    }
+  
+  
+    /* Parte inferior */
+  
+    .footer__bottom {
+      padding: 32px 24px;
+  
+      grid-template-columns: 1fr;
+  
+      gap: 25px;
+    }
+  
+  
+    .footer__logo,
+    .footer__copyright,
+    .footer__social {
+      justify-self: start;
+    }
+  
+  
+    .footer__copyright {
+      font-size: 15px;
+  
+      white-space: normal;
+    }
+  
+  }

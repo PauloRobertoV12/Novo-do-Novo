@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Inicial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Mada:wght@400;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/hero.css">
+<link rel="stylesheet" href="../css/rodape.css">
+<link rel="stylesheet" href="../css/carrinho.css">
+<link rel="stylesheet" href="../css/products.css">
+<link rel="stylesheet" href="./css/categories.css">
+<link rel="stylesheet" href="./css/colecao.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/produto.css">
+<link rel="stylesheet" href="./css/components.css/arrows.css">
+<link rel="stylesheet" href="./css/components.css/products.css">
+<link rel="stylesheet" href="./css/components.css/rodape.css">
+<link rel="stylesheet" href="./css/components.css/header.css">
+<link rel="stylesheet" href="./css/responsive.css/mobile-767.css">
+<link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const menuButton = document.getElementById("menuButton");
+          const fixedMenu = document.getElementById("fixedMenu");
+      
+          console.log("Botão:", menuButton);
+          console.log("Menu:", fixedMenu);
+      
+          if (!menuButton || !fixedMenu) {
+            console.error("ERRO: menuButton ou fixedMenu não foi encontrado.");
+            return;
+          }
+      
+          menuButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+      
+            console.log("CLIQUE NO HAMBÚRGUER!");
+      
+            const isOpen = fixedMenu.classList.toggle("is-open");
+      
+            menuButton.setAttribute(
+              "aria-expanded",
+              String(isOpen)
+            );
+      
+            fixedMenu.setAttribute(
+              "aria-hidden",
+              String(!isOpen)
+            );
+      
+            console.log("Menu aberto:", isOpen);
+            console.log("Classes:", fixedMenu.className);
+          });
+        });
+      </script>
+    
+    <!-- CABEÇALHO FIXO -->
+    <header class="hero__header">
+        <div class="container">
+    
+      <!-- Barras decorativas -->
+      <div class="hero__header-bars">
+        <div class="hero__header-bar hero__header-bar--primary"></div>
+        <div class="hero__header-bar hero__header-bar--secondary"></div>
+      </div>
+    
+    
+      <!-- Cabeçalho principal -->
+      <div class="hero__header-inner">
+    
+        <!-- Menu hambúrguer -->
+        <button
+          class="hero__menu-btn"
+          id="menuButton"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="fixedMenu"
+        >
+          <img
+            src="./assets/images/Ícone do Menu.png"
+            class="hero__icon"
+            alt=""
+          >
+        </button>
+    
+    
+        <!-- Logo -->
+        <div class="hero__logo">
+          <a href="../index.html">
+            <img
+              src="../assets/images/Logotipo.png"
+              alt="Logotipo"
+            >
+          </a>
+        </div>
+    
+    
+        <!-- Pesquisa -->
+        <form class="hero__search">
+    
+          <input type="search" name="busca"
+            class="hero__search-input"
+            placeholder="Buscar Produtos"
+          >
+    
+          <button
+            type="submit"
+            class="hero__search-button"
+            aria-label="Buscar"
+          >
+            <img
+              src="../assets/images/Ícone da Pesquisa.png"
+              class="hero__search-icon"
+              alt=""
+            >
+          </button>
+    
+        </form>
+    
+    
+        <!-- Perfil -->
+        <div
+          class="hero__profile-btn" type="button" aria-label="Perfil">
+            <a href="http://127.0.0.1:5500/pages/login.html">
+                <img src="../assets/images/Ícone de Usuário.png" class="hero__icon" alt="Ícone do Usuário">
+            </a>
+        </div>
+
+        <!-- Carrinho -->
+        <div>
+            <a href="http://127.0.0.1:5500/pages/carrinho.html" class="hero__cart">
+          <div class="hero__cart-icon-wrap">
+            <img
+              src="../assets/images/Ícone de Carrinho.png"
+              class="hero__cart-icon"
+              alt="">
+            <span class="hero__cart-count">
+              0
+            </span>
+          </div>
+          <span class="hero__cart-text">
+            VER MEU CARRINHO
+          </span>
+        </a>
+        </div>
+      </div>
+    
+      <!-- =========================================
+           MENU QUE ABRE ABAIXO DO HEADER
+      ========================================== -->
+      <nav
+        class="fixed-menu"
+        id="fixedMenu"
+        aria-hidden="true"
+        aria-label="Menu principal">
+        <div class="fixed-menu__inner">
+          <a href="./index.html" class="fixed-menu__item">
+            <span class="fixed-menu__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </span>
+            <span>Página Inicial</span>
+          </a>
+          <a href="http://127.0.0.1:5500/pages/colecao.html" class="fixed-menu__item">
+            <span class="fixed-menu__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </span>
+            <span>Nossas Coleções</span>
+          </a>
+          <a href="http://127.0.0.1:5500/pages/404.html" class="fixed-menu__item">
+            <span class="fixed-menu__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </span>
+            <span>Página Erro</span>
+          </a>
+          <a href="http://127.0.0.1:5500/pages/produto.html" class="fixed-menu__item">
+            <span class="fixed-menu__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </span>
+            <span>Nossos Produtos</span>
+          </a>
+          <a href="#" class="fixed-menu__item">
+            <span class="fixed-menu__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </span>
+            <span>Buscar Produtos</span>
+          </a>
+          <a href="#" class="fixed-menu__item">
+            <span class="fixed-menu__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </span>
+            <span>Buscar Produtos</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+    </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <nav class="hero-container">
+                <div class="arrows">
+                            <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Produtos anteriores">
+                        <img src="../assets/images/Seta Comum Básica.png" alt="Seta da Esquerda">
+                    </button>
+                            <div class="hero__content">
+                                <h1>Compre Aqui o seu Produto!</h1>
+                                <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per </p>
+                                <div>
+                                    <a href="http://127.0.0.1:5500/pages/carrinho.html" class="hero__cta">
+                                    <div class="hero__cta-icon">
+                                        <img src="./assets/images/Ícone de Carrinho.png" alt="Ícone do Botão Pequeno">
+                                    </div>
+                                    <div class="hero__cta-text">
+                                        <span class="button-text">Compre Agora Mesmo!</span>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="hero__arrow hero__arrow--next" type="button" aria-label="Próximos produtos">
+                        <img src="../assets/images/Seta Preenchida Hover.png" alt="Seta da Direita Selecionada">
+                    </button>
+                </div>
+                <div class="arrows-pagination">
+                  <button type="button" class="arrow-dot arrow-dot--active" aria-label="Imagem 1"></button>
+                  <button type="button" class="arrow-dot" aria-label="Imagem 2"></button>
+                  <button type="button" class="arrow-dot" aria-label="Imagem 3"></button>
+                  <button type="button" class="arrow-dot" aria-label="Imagem 4"></button>
+                  <button type="button" class="arrow-dot" aria-label="Imagem 5"></button>
+                </div>
+            </nav>
+        </section>
+
+        <section class="products" aria-label="Produtos em destaque">
+            <div class="products__main">
+            <header class="products__header">
+                <h2 class="products__title">Cafés em Grãos, Moídos e Cápsulas</h2>
+            </header>
+    
+            <div class="products__cards">
+                <article class="product-card">
+                <div class="product-card__bg"></div>
+                <div class="product-card__inner">
+                  <a href="http://127.0.0.1:5500/pages/produto.html">
+                    <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                    <div class="product-card__info">
+                    <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                    <span class="product-card__price">R$ 79,90</span>
+                    <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                    </div>
+                    <div class="product-card__cart">
+                    <div class="product-card__cart-border"></div>
+                    <span class="product-card__cart-text">MEU CARRINHO</span>
+                    <button class="product-card__cart-icon">
+                        <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                    </button>
+                    </div>
+                  </a>
+                </div>
+                </article>
+    
+                <article class="product-card">
+                <a href="http://127.0.0.1:5500/pages/produto.html">
+                <div class="product-card__bg"></div>
+                <div class="product-card__inner">
+                    <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                    <div class="product-card__info">
+                    <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                    <span class="product-card__price">R$ 79,90</span>
+                    <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                    </div>
+                    <div class="product-card__cart">
+                    <div class="product-card__cart-border"></div>
+                    <span class="product-card__cart-text">MEU CARRINHO</span>
+                    <button class="product-card__cart-icon">
+                        <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                    </button>
+                    </div>
+                </div>
+                </a>
+                </article>
+    
+                <article class="product-card">
+                <a href="http://127.0.0.1:5500/pages/produto.html">
+                <div class="product-card__bg"></div>
+                <div class="product-card__inner">
+                    <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                    <div class="product-card__info">
+                    <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                    <span class="product-card__price">R$ 79,90</span>
+                    <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                    </div>
+                    <div class="product-card__cart">
+                    <div class="product-card__cart-border"></div>
+                    <span class="product-card__cart-text">MEU CARRINHO</span>
+                    <button class="product-card__cart-icon">
+                        <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                    </button>
+                    </div>
+                </div>
+                </a>
+                </article>
+    
+                <article class="product-card">
+                <a href="http://127.0.0.1:5500/pages/produto.html">
+                <div class="product-card__bg"></div>
+                <div class="product-card__inner">
+                    <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                    <div class="product-card__info">
+                    <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                    <span class="product-card__price">R$ 79,90</span>
+                    <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                    </div>
+                    <div class="product-card__cart">
+                    <div class="product-card__cart-border"></div>
+                    <span class="product-card__cart-text">MEU CARRINHO</span>
+                    <button class="product-card__cart-icon">
+                        <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                    </button>
+                    </div>
+                </div>
+                </a>
+                </article>
+            </div>
+            </div>
+    
+            <nav class="products__nav" aria-label="Navegação de produtos">
+            <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Produtos anteriores">
+                <img src="../assets/images/Seta Comum Básica.png" alt="Seta da Esquerda">
+            </button>
+            <button class="hero__arrow hero__arrow--next" type="button" aria-label="Próximos produtos">
+                <img src="../assets/images/Seta Preenchida Hover.png" alt="Seta da Direita Selecionada">
+            </button>
+            </nav>
+        </section>
+
+        <section class="product-section">
+
+          <h2 class="product-section__title">
+            Cafés em Grãos, Moídos e Cápsulas
+          </h2>
+        
+          <div class="product-section__banners">
+        
+            <article class="category-banner">
+              <img src="../assets/images/Imagem do Produto.png" alt="">
+            </article>
+        
+            <article class="category-banner">
+              <img src="../assets/images/Imagem do Produto.png" alt="">
+            </article>
+        
+            <article class="category-banner">
+              <img src="../assets/images/Imagem do Produto.png" alt="">
+            </article>
+        
+            <article class="category-banner">
+              <img src="../assets/images/Imagem do Produto.png" alt="">
+            </article>
+        
+          </div>
+        
+          <div class="slider-controls">
+              <nav class="products__nav" aria-label="Navegação de produtos">
+                  <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Produtos anteriores">
+                      <img src="../assets/images/Seta Comum Básica.png" alt="Seta da Esquerda">
+                  </button>
+                  <button class="hero__arrow hero__arrow--next" type="button" aria-label="Próximos produtos">
+                      <img src="../assets/images/Seta Preenchida Hover.png" alt="Seta da Direita Selecionada">
+                  </button>
+              </nav>
+          </div>
+  
+        </section>
+
+        <section class="products" aria-label="Produtos em destaque">
+          <div class="products__main">
+          <header class="products__header">
+              <h2 class="products__title">Cafés em Grãos, Moídos e Cápsulas</h2>
+          </header>
+  
+          <div class="products__cards">
+              <article class="product-card">
+              <div class="product-card__bg"></div>
+              <div class="product-card__inner">
+                <a href="http://127.0.0.1:5500/pages/produto.html">
+                  <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                  <div class="product-card__info">
+                  <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                  <span class="product-card__price">R$ 79,90</span>
+                  <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                  </div>
+                  <div class="product-card__cart">
+                  <div class="product-card__cart-border"></div>
+                  <span class="product-card__cart-text">MEU CARRINHO</span>
+                  <button class="product-card__cart-icon">
+                      <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                  </button>
+                  </div>
+                </a>
+              </div>
+              </article>
+  
+              <article class="product-card">
+              <a href="http://127.0.0.1:5500/pages/produto.html">
+              <div class="product-card__bg"></div>
+              <div class="product-card__inner">
+                  <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                  <div class="product-card__info">
+                  <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                  <span class="product-card__price">R$ 79,90</span>
+                  <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                  </div>
+                  <div class="product-card__cart">
+                  <div class="product-card__cart-border"></div>
+                  <span class="product-card__cart-text">MEU CARRINHO</span>
+                  <button class="product-card__cart-icon">
+                      <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                  </button>
+                  </div>
+              </div>
+              </a>
+              </article>
+  
+              <article class="product-card">
+              <a href="http://127.0.0.1:5500/pages/produto.html">
+              <div class="product-card__bg"></div>
+              <div class="product-card__inner">
+                  <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                  <div class="product-card__info">
+                  <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                  <span class="product-card__price">R$ 79,90</span>
+                  <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                  </div>
+                  <div class="product-card__cart">
+                  <div class="product-card__cart-border"></div>
+                  <span class="product-card__cart-text">MEU CARRINHO</span>
+                  <button class="product-card__cart-icon">
+                      <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                  </button>
+                  </div>
+              </div>
+              </a>
+              </article>
+  
+              <article class="product-card">
+              <a href="http://127.0.0.1:5500/pages/produto.html">
+              <div class="product-card__bg"></div>
+              <div class="product-card__inner">
+                  <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+                  <div class="product-card__info">
+                  <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+                  <span class="product-card__price">R$ 79,90</span>
+                  <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+                  </div>
+                  <div class="product-card__cart">
+                  <div class="product-card__cart-border"></div>
+                  <span class="product-card__cart-text">MEU CARRINHO</span>
+                  <button class="product-card__cart-icon">
+                      <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+                  </button>
+                  </div>
+              </div>
+              </a>
+              </article>
+          </div>
+          </div>
+
+        <nav class="products__nav" aria-label="Navegação de produtos">
+        <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Produtos anteriores">
+            <img src="../assets/images/Seta Comum Básica.png" alt="Seta da Esquerda">
+        </button>
+        <button class="hero__arrow hero__arrow--next" type="button" aria-label="Próximos produtos">
+            <img src="../assets/images/Seta Preenchida Hover.png" alt="Seta da Direita Selecionada">
+        </button>
+        </nav>
+    </section>
+
+    <section class="product-section">
+
+      <h2 class="product-section__title">
+        Cafés em Grãos, Moídos e Cápsulas
+      </h2>
+    
+      <div class="product-section__banners">
+    
+        <article class="category-banner">
+          <img src="../assets/images/Imagem do Produto.png" alt="">
+        </article>
+    
+        <article class="category-banner">
+          <img src="../assets/images/Imagem do Produto.png" alt="">
+        </article>
+    
+        <article class="category-banner">
+          <img src="../assets/images/Imagem do Produto.png" alt="">
+        </article>
+    
+        <article class="category-banner">
+          <img src="../assets/images/Imagem do Produto.png" alt="">
+        </article>
+    
+      </div>
+    
+      <div class="slider-controls">
+          <nav class="products__nav" aria-label="Navegação de produtos">
+              <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Produtos anteriores">
+                  <img src="../assets/images/Seta Comum Básica.png" alt="Seta da Esquerda">
+              </button>
+              <button class="hero__arrow hero__arrow--next" type="button" aria-label="Próximos produtos">
+                  <img src="../assets/images/Seta Preenchida Hover.png" alt="Seta da Direita Selecionada">
+              </button>
+          </nav>
+      </div>
+
+    </section>
+
+    <section class="products" aria-label="Produtos em destaque">
+      <div class="products__main">
+      <header class="products__header">
+          <h2 class="products__title">Cafés em Grãos, Moídos e Cápsulas</h2>
+      </header>
+
+      <div class="products__cards">
+          <article class="product-card">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+            <a href="http://127.0.0.1:5500/pages/produto.html">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+            </a>
+          </div>
+          </article>
+
+          <article class="product-card">
+          <a href="http://127.0.0.1:5500/pages/produto.html">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+          </div>
+          </a>
+          </article>
+
+          <article class="product-card">
+          <a href="http://127.0.0.1:5500/pages/produto.html">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+          </div>
+          </a>
+          </article>
+
+          <article class="product-card">
+          <a href="http://127.0.0.1:5500/pages/produto.html">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+          </div>
+          </a>
+          </article>
+      </div>
+      </div>
+
+        <nav class="products__nav" aria-label="Navegação de produtos">
+        <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Produtos anteriores">
+            <img src="../assets/images/Seta Comum Básica.png" alt="Seta da Esquerda">
+        </button>
+        <button class="hero__arrow hero__arrow--next" type="button" aria-label="Próximos produtos">
+            <img src="../assets/images/Seta Preenchida Hover.png" alt="Seta da Direita Selecionada">
+        </button>
+        </nav>
+    </section>
+    
+    <section class="products" aria-label="Produtos em destaque">
+      <div class="products__main">
+      <header class="products__header">
+          <h2 class="products__title">Cafés em Grãos, Moídos e Cápsulas</h2>
+      </header>
+
+      <div class="products__cards">
+          <article class="product-card">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+            <a href="http://127.0.0.1:5500/pages/produto.html">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+            </a>
+          </div>
+          </article>
+
+          <article class="product-card">
+          <a href="http://127.0.0.1:5500/pages/produto.html">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+          </div>
+          </a>
+          </article>
+
+          <article class="product-card">
+          <a href="http://127.0.0.1:5500/pages/produto.html">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+          </div>
+          </a>
+          </article>
+
+          <article class="product-card">
+          <a href="http://127.0.0.1:5500/pages/produto.html">
+          <div class="product-card__bg"></div>
+          <div class="product-card__inner">
+              <div class="product-card__image" role="img" aria-label="Imagem do produto"></div>
+              <div class="product-card__info">
+              <h3 class="product-card__name">Cafés em Grãos, Moídos e Cápsulas</h3>
+              <span class="product-card__price">R$ 79,90</span>
+              <p class="product-card__discount">Desconto de 10% OFF no pix</p>
+              </div>
+              <div class="product-card__cart">
+              <div class="product-card__cart-border"></div>
+              <span class="product-card__cart-text">MEU CARRINHO</span>
+              <button class="product-card__cart-icon">
+                  <img src="../assets/images/Ícone de Carrinho.png" alt="Ícone do Carrinho">
+              </button>
+              </div>
+          </div>
+          </a>
+          </article>
+      </div>
+      </div>
+
+        <nav class="products__nav" aria-label="Navegação de produtos">
+        <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Produtos anteriores">
+            <img src="../assets/images/Seta Comum Básica.png" alt="Seta da Esquerda">
+        </button>
+        <button class="hero__arrow hero__arrow--next" type="button" aria-label="Próximos produtos">
+            <img src="../assets/images/Seta Preenchida Hover.png" alt="Seta da Direita Selecionada">
+        </button>
+        </nav>
+    </section>
+    
+    </main>
+
+    <footer class="footer">
+
+        <!-- Barras decorativas atrás do footer -->
+        <div class="footer__bars" aria-hidden="true">
+          <div class="footer__bar footer__bar--primary"></div>
+          <div class="footer__bar footer__bar--secondary"></div>
+        </div>
+    
+      <div class="footer__container">
+    
+        <!-- Espaço superior -->
+        <div class="footer__spacer"></div>
+    
+        <!-- Contato -->
+        <div class="footer__contact">
+          <div class="footer__contact-item">
+            <span class="footer__label">Contato</span>
+    
+            <a href="tel:+5511999999999" class="footer__phone">
+              (11) 9999-9999
+            </a>
+          </div>
+    
+          <div class="footer__contact-item footer__contact-item--right">
+            <span class="footer__label">
+              E-mail / de seg. a sex. das 8h às 18h
+            </span>
+    
+            <a href="mailto:nossocontato@com.br" class="footer__email">
+              nossocontato@com.br
+            </a>
+          </div>
+        </div>
+    
+        <!-- Parte inferior -->
+        <div class="footer__bottom">
+          <a href="#" class="footer__logo">
+            Logotipo
+          </a>
+    
+          <p class="footer__copyright">
+            Marca 2026 - Direitos Autorais
+          </p>
+    
+          <div class="footer__social">
+            <!-- Instagram -->
+            <a href="#" aria-label="Facebook">
+              <img src="../assets/images/Facebook.svg" alt="Facebook" class="icon-facebook">
+            </a>
+    
+            <!-- Facebook -->
+            <!-- Instagram -->
+            <a href="#" aria-label="Instagram">
+              <img src="../assets/images/Instagram.svg" alt="Instagram">
+            </a>
+            
+          </div>
+        </div>
+    
+      </div>
+    </footer>
+    
+    </body>
+    </html>

@@ -1,0 +1,31 @@
+.arrows {
+    display: flex;
+    margin-top: 300px;
+    justify-content: space-between;
+  }
+  
+.arrows-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    top: 780px;
+  }
+  
+.arrow-dot {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 1px solid #775a3c;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+.arrow-dot--active {
+    border-color: #916e49;
+    background: #916e49;
+  }
